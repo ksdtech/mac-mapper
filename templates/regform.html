@@ -1,0 +1,17 @@
+$def with (form)
+
+<html>
+<head><title>Chromebook MAC Address Lookup</title></head>
+<body>
+<p>Please enter information in all fields, then click Submit.</p>
+<form name="register" method="post"> 
+$if not form.valid:
+  $if not form.username.value:
+    <p class="error">Try again:</p>
+  $else:
+    <p class="error">Try again, $form.username.value:</p>
+$:form.render()
+<input type="submit" />    
+</form>
+</body>
+</html>
