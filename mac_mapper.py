@@ -84,13 +84,13 @@ render = web.template.render('templates/')
 macform = form.Form( 
     form.Textbox('sticker',
         form.notnull,
-        form.regexp('A001[\d]{3}', '&nbsp;Like A001001'),
+        form.regexp('A001[\d]{3}', ' Like A001001'),
         value='A001',
         post='&nbsp;The A001... number from the yellow sticker'
     ), 
     form.Textbox('label', 
         form.notnull,
-        form.regexp('([NS]C[123]|RM[\d]+|CB|TO)-[\d+]', '&nbsp;Like NC2-20'),
+        form.regexp('([NS]C[123]|RM[\d]+|CB|TO)-[\d+]', ' Like NC2-20'),
         post='&nbsp;The cart or room name and CB number, like NC2-20, RM23-20, or CB-20'
     ),
     form.Textbox('username',
