@@ -6,7 +6,7 @@ $def with (form, ua)
 <style type="text/css">
 body     { font-family:Verdana,Arial,Helvetica,sans-serif; }
 form th  { text-align:right; }
-p.error  { color:red; }
+p.wrong  { color:red; }
 p.small  { font-size:small; }
 </style>
 </head>
@@ -15,7 +15,7 @@ p.small  { font-size:small; }
 <p>Please enter information in all fields, then click Submit.</p>
 <form name="register" method="post"> 
 $if not form.valid:
-  <p class="error">Please correct errors shown below</p>
+  <p class="wrong">Please correct errors shown below</p>
 $:form.render()
 <input type="submit" />    
 </form>

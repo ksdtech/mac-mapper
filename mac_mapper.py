@@ -86,16 +86,16 @@ macform = form.Form(
         form.notnull,
         form.regexp('A001[\d]{3}', 'Like A001001'),
         value='A001',
-        post='The A001... number from the yellow sticker'
+        post='&nbsp;The A001... number from the yellow sticker'
     ), 
     form.Textbox('label', 
         form.notnull,
         form.regexp('([NS]C[123]|RM[\d]+|CB|TO)-[\d+]', 'Like NC2-20'),
-        post='The cart or room name and CB number, like NC2-20'
+        post='&nbsp;The cart or room name and CB number, like NC2-20, RM23-20, or CB-20'
     ),
     form.Textbox('username',
         form.notnull,
-        post='Your username, like 17sandyp'
+        post='&nbsp;Your username, like 17sandyp'
     )
 )
 
