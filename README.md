@@ -10,6 +10,6 @@ Appends results to a .csv file.
 
 Requirements
 ------------
-Python 2.6 or above
-web.py package
-pypureomapi package
+* Python 2.6 or above
+* web.py package
+* pypureomapi package
