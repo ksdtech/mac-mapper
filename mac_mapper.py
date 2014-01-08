@@ -1,3 +1,4 @@
+#!/Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7
 import csv
 import os
 import sys
@@ -119,13 +120,9 @@ class MacMapper:
         else:
             return render.invalid_ua(ua)
             
+urls = ('/.*', 'MacMapper')
+app = web.application(urls, globals())
+web.internalerror = web.debugerror
 
 if __name__=="__main__":
-    urls = (
-      '/', 'MacMapper'
-    )
-    app = web.application(urls, globals())
-    web.internalerror = web.debugerror
     app.run()
-
-# serveradmin fullstatus dhcp
