@@ -13,3 +13,4 @@ Requirements
 * web.py package
 * netaddr package
 * pypureomapi package
+* flup package (for WSGI support in Apache)
