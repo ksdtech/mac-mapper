@@ -1,8 +1,16 @@
-$def with (form)
+$def with (form, ua)
 
 <html>
-<head><title>Chromebook MAC Address Lookup</title></head>
+<head>
+<title>Chromebook Address Registration</title>
+<style type="text/css">
+body     { font-family:Verdana,Arial,Helvetica,sans-serif; }
+form th  { text-align:right; }
+p.small  { font-size:small; }
+</style>
+</head>
 <body>
+<h3>Chromebook Address Registration</h3>
 <p>Please enter information in all fields, then click Submit.</p>
 <form name="register" method="post"> 
 $if not form.valid:
@@ -13,5 +21,6 @@ $if not form.valid:
 $:form.render()
 <input type="submit" />    
 </form>
+<p class="small">Browser: $ua</p>
 </body>
 </html>
