@@ -1,7 +1,6 @@
 mac-mapper
 ==========
-
-Register Chromebook MAC addresses.
+web.py application to register Chromebook MAC addresses.
 
 Looks up DHCP leases from an ISC DHCP server using the OMAPI
 protocol and the remote IP address of the request.
@@ -12,4 +11,5 @@ Requirements
 ------------
 * Python 2.6 or above
 * web.py package
+* netaddr package
 * pypureomapi package
