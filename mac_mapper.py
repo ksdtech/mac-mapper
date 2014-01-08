@@ -90,7 +90,7 @@ macform = form.Form(
     ), 
     form.Textbox('label', 
         form.notnull,
-        form.regexp('([NS]C[123]|RM[\d]+|CB)-[\d+]', 'Like NC2-20'),
+        form.regexp('([NS]C[123]|RM[\d]+|CB|TO)-[\d+]', 'Like NC2-20'),
         post='The cart or room name and CB number, like NC2-20'
     ),
     form.Textbox('username',
@@ -112,7 +112,7 @@ class MacMapper:
         ua = web.ctx.env['HTTP_USER_AGENT']
         if 'CrOS' in ua or not ENFORCE_CROS:
             form = macform() 
-            if not form.validates(): 
+            if not form.validates():
                 return render.registration_form(form, ua)
             else:
                 msg = dhcp_lookup(web.ctx['ip'], form.sticker.value, form.label.value, form.username.value)
