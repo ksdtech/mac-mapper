@@ -60,6 +60,9 @@ def find_server(ip_address):
     return (None, None)
 
 def log_mac_address(sticker, label, username, mac_address, ip_address, created_at):
+	"""
+	@raises: IOError
+	"""
     with open('mac_address.csv', 'a+b') as csvfile:
         w = csv.writer(csvfile)
         w.writerow([ sticker, label, username, mac_address, ip_address, 
@@ -76,8 +79,11 @@ def dhcp_lookup(ip_address, sticker, label, username):
         mac_address = omapi.lookup_mac(ip_address)
         log_mac_address(sticker, label, username, mac_address, ip_address, t_now)
         return "Your IP address, %s, was assigned to the hardware address %s." % (ip_address, mac_address)
-    except:
+    except OmapiErrorNotFound:
         return "Your IP address, %s, was not found." % ip_address
+    except:
+        # IOError, socket.error
+        return "Please contact system administrator (internal error)."
 
 render = web.template.render('templates/')
 
